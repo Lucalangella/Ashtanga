@@ -6,15 +6,8 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		BA7088892D0748D00026B4C4 /* YogaModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7088882D0748D00026B4C4 /* YogaModels.swift */; };
-		BA70888B2D0749060026B4C4 /* YogaRoutineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA70888A2D0749060026B4C4 /* YogaRoutineView.swift */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXFileReference section */
 		BA537AD72D06F69A002B5DC1 /* Ashtanga.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ashtanga.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		BA7088882D0748D00026B4C4 /* YogaModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaModels.swift; sourceTree = "<group>"; };
-		BA70888A2D0749060026B4C4 /* YogaRoutineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaRoutineView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -39,8 +32,6 @@
 		BA537ACE2D06F69A002B5DC1 = {
 			isa = PBXGroup;
 			children = (
-				BA7088882D0748D00026B4C4 /* YogaModels.swift */,
-				BA70888A2D0749060026B4C4 /* YogaRoutineView.swift */,
 				BA537AD92D06F69A002B5DC1 /* Ashtanga */,
 				BA537AD82D06F69A002B5DC1 /* Products */,
 			);
@@ -128,8 +119,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA7088892D0748D00026B4C4 /* YogaModels.swift in Sources */,
-				BA70888B2D0749060026B4C4 /* YogaRoutineView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
