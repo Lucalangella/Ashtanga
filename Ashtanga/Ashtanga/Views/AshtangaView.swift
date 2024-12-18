@@ -13,57 +13,26 @@ struct AshtangaView: View {
     
     var body: some View {
         NavigationStack {
-                ScrollView {
-                            VStack(alignment: .leading) {
-                                ForEach(routines) { routine in
-                                    NavigationLink {
-                                        RoutineView(routine: routine)
-                                        } label: {
-                                        VStack {
-                                          VStack {
-                                            Text(routine.sanskritName)
-                                                .foregroundStyle(.black)
-                                                .font(.title)
-                                                .frame(maxWidth: .infinity, alignment: .leading)
-                                            Text(routine.name)
-                                                .font(.subheadline)
-                                                .foregroundColor(.gray)
-                                                .frame(maxWidth: .infinity, alignment: .leading)
-                                                    }
-                                                     .padding(.horizontal)
-                                                     .padding(.vertical, 10)
-                                        //time and poses
-                                        HStack {
-                                          HStack {
-                                            Image(systemName: "stopwatch.fill")
-                                              Text("\(routine.duration) min")
-                                                  }
-                                                  .padding(.leading)
-                                           HStack {
-                                            Image(systemName: "figure.yoga")
-                                            Text(String(routine.poses.count))
-                                                  }
-                                                  .padding(.leading, 30)
-                                                   Spacer()
-                                                }
-                                                .offset(y: -10)
-                                                }
-                                                .frame(height: 80)
-                                                .frame(maxWidth: .infinity)
-                                                .padding()
-                                                .background(Color.white)
-                                                .cornerRadius(10)
-                                                .shadow(color: Color.black.opacity(0.2), radius: 6, x: 0, y: 4)
-                                                .padding()
-                                            }
-                                        }
-                                    }
-                                    .padding()
-                                }
+            ScrollView {
+                VStack(spacing: 16) { // Add vertical spacing between cards
+                    ForEach(routines) { routine in
+                        NavigationLink(destination: RoutineView(routine: routine)) {
+                            CardRoutineView(routine: routine)
+                                .padding(.horizontal) // Consistent horizontal padding
+                        }
+                        .accessibilityLabel("\(routine.name) Routine")
+                        .accessibilityHint("Tap to view details and start practice")
+                    }
+                }
+                .padding(.top, 16)
                 .navigationTitle("Ashtanga")
+                .navigationBarTitleDisplayMode(.large)
             }
+            .background(Color(.systemGroupedBackground)) // Subtle background color
         }
     }
+}
+
 
 
 struct AshtangaView_Previews: PreviewProvider {

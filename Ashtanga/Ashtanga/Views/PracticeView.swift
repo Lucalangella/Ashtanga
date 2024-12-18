@@ -90,14 +90,12 @@ struct PracticeView: View {
                     if currentPoseIndex < routine.poses.count {
                         let pose = routine.poses[currentPoseIndex]
                         
-                        VStack {
                             Image(pose.image)
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
-                                .frame(height: 600)
-                                .cornerRadius(20)
-                        }
-                        .padding()
+                                .frame(width: 350, height: 500)
+                                .padding(.bottom, 100)
+                       
                     } else {
                         Text("Practice Complete!")
                             .font(.title)
@@ -115,7 +113,7 @@ struct PracticeView: View {
                             Image(systemName: "ellipsis")
                                 .font(.system(size: 20))
                                 .foregroundColor(.black)
-                                .padding(.bottom, 100)
+                                .padding(.bottom, 70)
                                 .padding(.trailing, 50)
                         }
                     }
@@ -217,8 +215,8 @@ struct PracticeView: View {
         posesNumber: 12,
         difficulty: .beginner,
         poses: [
-            YogaPose(image: "Mountain", sanskritName: "Tadasana", name: "Mountain Pose", instructions: "Stand tall with feet together, shoulders relaxed, weight evenly distributed through your soles, arms at sides."),
-            YogaPose(image: "UpwardSalute", sanskritName: "Urdhva Hastasana", name: "Upward Salute", instructions: "Inhale and extend your arms out to the sides and up toward the ceiling, palms facing each other."),
+            YogaPose(image: "PrayerPose", sanskritName: "Pranamasana", name: "Mountain Pose", instructions: "Stand tall with feet together, shoulders relaxed, weight evenly distributed through your soles, arms at sides."),
+            YogaPose(image: "Equestrian", sanskritName: "Urdhva Hastasana", name: "Upward Salute", instructions: "Inhale and extend your arms out to the sides and up toward the ceiling, palms facing each other."),
             YogaPose(image: "ForwardFold", sanskritName: "Uttanasana", name: "Standing Forward Bend", instructions: "Exhale and bend forward from the hip joints, bringing your hands to the floor or your legs.")
         ]
     )

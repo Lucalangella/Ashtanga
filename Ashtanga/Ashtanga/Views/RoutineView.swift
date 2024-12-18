@@ -15,12 +15,13 @@ struct RoutineView: View {
     var body: some View {
         VStack {
             VStack(spacing: 30) {
-                HStack(spacing: 0) {
-                    VStack {
+                HStack {
+                    VStack(alignment: .leading) {
                         Text(routine.name)
                             .font(.title2)
                             .foregroundStyle(Color.secondary)
                             .padding(.bottom, 5)
+                           
                         HStack {
                             Image(systemName: "stopwatch.fill")
                             Text(String(format: "%02d:%02d", routine.duration))
@@ -43,14 +44,7 @@ struct RoutineView: View {
                         .font(.headline)
                         .foregroundColor(.white)
                         .padding()
-                        .background(
-                            RadialGradient(
-                                gradient: Gradient(colors: [.red.opacity(0.8), .orange]),
-                                center: .center,
-                                startRadius: 10,
-                                endRadius: 100
-                            )
-                        )
+                        .background(Color.accent)
                         .cornerRadius(10)
                 }
                 .padding(.horizontal)
@@ -80,6 +74,6 @@ struct RoutineView: View {
 
 #Preview {
     NavigationView {
-        RoutineView(routine: SunRoutine)
+        RoutineView(routine: beginnerRoutine)
     }
 }

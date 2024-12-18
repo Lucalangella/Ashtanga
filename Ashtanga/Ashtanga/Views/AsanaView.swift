@@ -1,10 +1,3 @@
-//
-//  AsanaView.swift
-//  Ashtanga
-//
-//  Created by Luca Langella 1 on 09/12/24.
-//
-
 import SwiftUI
 
 struct AsanaView: View {
@@ -27,28 +20,26 @@ struct AsanaView: View {
         }
         
         // Convert the dictionary values to an array and sort by name
-        self.uniquePoses = uniquePosesDict.values.sorted(by: { $0.name < $1.name })
+        self.uniquePoses = uniquePosesDict.values.sorted(by: { $0.sanskritName < $1.sanskritName })
     }
     
     var body: some View {
         NavigationStack {
             List {
-                        ForEach(uniquePoses) { pose in
-                            NavigationLink {
-                                YogaPoseView(pose: pose)
-                            } label: {
-                                CardPoseView(pose: pose)
-                            }
-                        }
-                    //.background(Color.gray.opacity(0.1))
-                   // .cornerRadius(10)
-                    //.padding(.horizontal)
+                ForEach(uniquePoses) { pose in
+                    NavigationLink(destination: YogaPoseView(pose: pose)) {
+                        CardPoseView(pose: pose)
+                            .padding(.vertical, 8) // Add breathing space between cards
+                    }
                 }
-            .background(Color.gray.opacity(0.1))
-                .navigationTitle("Asana")
+            }
+            .navigationTitle("Asana")
+            .background(Color(.systemGroupedBackground)) // Subtle background
         }
     }
 }
+
+
 
 #Preview {
     AsanaView()

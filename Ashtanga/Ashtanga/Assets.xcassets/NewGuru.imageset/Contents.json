@@ -1,11 +1,12 @@
 {
   "images" : [
     {
-      "filename" : "Warrior II.svg",
+      "filename" : "NewGuruOrange.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "NewGuru.svg",
       "idiom" : "universal",
       "scale" : "2x"
     },

@@ -27,7 +27,7 @@ enum Difficulty: String, CaseIterable {
 
 // Sun Salutation Poses
 let meditationPose = YogaPose(
-    image: "Meditation",
+    image: "PrayerPose",
     sanskritName: "Pranamasana",
     name: "Prayer Pose",
     instructions: "Stand tall with feet together. Bring palms together in front of the chest in a prayer position. This pose symbolizes gratitude and sets an intention for the practice."
@@ -55,7 +55,7 @@ let equestrianPose = YogaPose(
 )
 
 let downwardDogPose = YogaPose(
-    image: "DownwardDog",
+    image: "DownwardFacingDog",
     sanskritName: "Adho Mukha Svanasana",
     name: "Downward-Facing Dog Pose",
     instructions: "Exhale and lift the hips, forming an inverted “V” shape. This pose stretches the hamstrings, calves, and spine while strengthening the arms."
@@ -241,7 +241,7 @@ let beginnerRoutine = YogaRoutine(
         childsPose,
         seatedTwistPose,
         bridgePose
-    ].flatMap { $0 }, count: 4).flatMap { $0 } // Repeats the 5 poses 4 times
+    ].compactMap { $0 }, count: 4).flatMap { $0 } // Repeats the 5 poses 4 times
 )
 
 // Intermediate Routine
@@ -258,7 +258,7 @@ let intermediateRoutine = YogaRoutine(
         cobraPose,
         chairPose,
         boatPose
-    ].flatMap { $0 }, count: 6).flatMap { $0 } // Repeats the 5 poses 6 times
+    ].compactMap { $0 }, count: 6).flatMap { $0 } // Repeats the 5 poses 6 times
 )
 
 // Advanced Routine
@@ -275,5 +275,5 @@ let advancedRoutine = YogaRoutine(
         kingPigeonPose,
         sidePlankPose,
         headstandPose
-    ].flatMap { $0 }, count: 8).flatMap { $0 } // Repeats the 5 poses 8 times
+    ].compactMap { $0 }, count: 8).flatMap { $0 } // Repeats the 5 poses 8 times
 )
