@@ -1,5 +1,5 @@
 # Ashtanga Yoga App
-This is a simple iOS app built with Xcode that helps users practice Ashtanga Yoga.
+This is an iOS app built with Xcode that helps users practice Ashtanga Yoga.
 <br>
 <div style="display: flex; justify-content: space-between;">
   <img src="https://github.com/user-attachments/assets/f1c12bd8-6cf8-468b-a118-287fff863d85" width="300"/>
