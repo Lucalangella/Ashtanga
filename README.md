@@ -13,7 +13,7 @@ This is a simple iOS app built with Xcode that helps users practice Ashtanga Yog
 - VoiceOver supported
 
 ## Credits
-- Special thanks to Paola Campanile for the beautiful drawings.
+Special thanks to Paola Campanile for the beautiful drawings.
 
 ## License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
