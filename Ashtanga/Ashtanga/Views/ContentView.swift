@@ -12,7 +12,7 @@ struct ContentView: View {
         TabView {
             AshtangaView ()
             .tabItem {
-                    Image("NewGuru")
+                Image(systemName: "figure.mind.and.body")
                     Text("Ashtanga")
                             }
 
