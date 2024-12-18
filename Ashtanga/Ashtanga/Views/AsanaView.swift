@@ -4,6 +4,21 @@ struct AsanaView: View {
     // Add this property to store unique poses
     let uniquePoses: [YogaPose]
     
+    // State property for the search text
+    @State private var searchText: String = ""
+    
+    // Computed property to filter poses based on search text
+    var filteredPoses: [YogaPose] {
+        if searchText.isEmpty {
+            return uniquePoses
+        } else {
+            return uniquePoses.filter { pose in
+                pose.name.localizedCaseInsensitiveContains(searchText) ||
+                pose.sanskritName.localizedCaseInsensitiveContains(searchText)
+            }
+        }
+    }
+    
     // Add an initializer
     init() {
         // Get all poses from all routines
@@ -26,7 +41,7 @@ struct AsanaView: View {
     var body: some View {
         NavigationStack {
             List {
-                ForEach(uniquePoses) { pose in
+                ForEach(filteredPoses) { pose in
                     NavigationLink(destination: YogaPoseView(pose: pose)) {
                         CardPoseView(pose: pose)
                             .padding(.vertical, 8) // Add breathing space between cards
@@ -35,6 +50,7 @@ struct AsanaView: View {
             }
             .navigationTitle("Asana")
             .background(Color(.systemGroupedBackground)) // Subtle background
+            .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "Search Poses")
         }
     }
 }

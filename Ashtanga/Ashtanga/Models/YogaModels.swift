@@ -62,7 +62,7 @@ let downwardDogPose = YogaPose(
 )
 
 let eightLimbedPose = YogaPose(
-    image: "EightLimbed",
+    image: "EightLimbedSalutation",
     sanskritName: "Ashtanga Namaskara",
     name: "Eight-Limbed Salutation",
     instructions: "Exhale and lower the knees, chest, and chin to the floor, keeping the hips lifted. The eight points of contact are the toes, knees, chest, chin, and palms."
